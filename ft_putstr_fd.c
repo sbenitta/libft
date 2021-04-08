@@ -6,7 +6,7 @@
 /*   By: sbenitta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 14:08:44 by sbenitta          #+#    #+#             */
-/*   Updated: 2021/04/05 14:11:01 by sbenitta         ###   ########.fr       */
+/*   Updated: 2021/04/08 15:49:57 by sbenitta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,14 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	int	i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

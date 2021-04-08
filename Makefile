@@ -6,7 +6,7 @@
 #    By: sbenitta <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/24 14:32:43 by sbenitta          #+#    #+#              #
-#    Updated: 2021/04/08 15:15:23 by sbenitta         ###   ########.fr        #
+#    Updated: 2021/04/08 15:39:04 by sbenitta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ clean:
 	${RM} ${OBJ}
 
 fclean: clean
-	${rm} ${NAME}
+	${RM} ${NAME}
 
 re:		fclean all
 
