@@ -6,7 +6,7 @@
 /*   By: sbenitta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:22:20 by sbenitta          #+#    #+#             */
-/*   Updated: 2021/04/05 17:35:05 by sbenitta         ###   ########.fr       */
+/*   Updated: 2021/04/09 11:26:05 by sbenitta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,4 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlcpy(char	*dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char	*dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
-
 #endif
