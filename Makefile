@@ -6,7 +6,7 @@
 #    By: sbenitta <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/08 17:01:12 by sbenitta          #+#    #+#              #
-#    Updated: 2021/04/09 12:32:44 by sbenitta         ###   ########.fr        #
+#    Updated: 2021/04/11 14:49:12 by sbenitta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC = ft_calloc.c\
 	  ft_strnstr.c\
 	  ft_toupper.c\
 	  ft_atoi.c\
-	  ft _isalnum.c\
+	  ft_isalnum.c\
 	  ft_isdigit.c\
 	  ft_memchr.c\
 	  ft_memmove.c\
@@ -57,6 +57,18 @@ SRC = ft_calloc.c\
 
 OBJ = $(SRC:.c=.o)
 
+LISTE = ft_lstnew.c\
+		ft_lstadd_front.c\
+		ft_lstsize.c\
+		ft_lstlast.c\
+		ft_lstadd_back.c\
+		ft_lstdelone.c\
+		ft_lstclear.c\
+		ft_lstiter.c\
+		ft_lstmap.c\
+
+LST = $(LISTE:.c=.o)
+
 RM = rm -rf
 
 all: $(NAME)
@@ -65,11 +77,15 @@ $(NAME): $(OBJ)
 		ar rc $(NAME) $(OBJ)
 		ranlib $(NAME)
 
+bonus: $(OBJ) $(LST)
+		ar rc $(NAME) $(OBJ) $(LST)
+		ranlib $(NAME)
+
 .c.o: 
 		$(CC) $(CFLAGS) $(HFLAGS) -c $< -o $(<:.c=.o)
 
 clean:
-		$(RM) $(OBJ)
+		$(RM) $(OBJ) $(LST)
 
 fclean: clean
 		$(RM) $(NAME)

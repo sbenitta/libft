@@ -6,7 +6,7 @@
 /*   By: sbenitta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 11:54:53 by sbenitta          #+#    #+#             */
-/*   Updated: 2021/04/09 12:12:12 by sbenitta         ###   ########.fr       */
+/*   Updated: 2021/04/09 14:16:54 by sbenitta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,26 @@ static int	comptemot(char const *s, char c)
 
 	i = 0;
 	counter = 0;
+	while (s[i] && s[i] == c)
+		i++;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] && (s[i] != c))
-			i++;
+		if (s[i] != c && (s[i + 1] == '\0' || s[i + 1] == c))
+			counter++;
+		i++;
 	}
 	return (counter);
 }
 
-static int	lougueurmot(const char *s, char c, int a)
+static int	longueurmot(const char *s, char c, int a)
 {
 	int	i;
 	int	len;
 
 	i = 0;
 	len = 0;
+	while (s[i] == c)
+		i++;
 	while (a != '\0')
 	{
 		if (s[i] == c && s[i + 1] != c)
@@ -61,6 +64,8 @@ static char	*cpymot(char const *s, char c, int a)
 	mot = (char *)malloc(sizeof(char) * longueurmot(s, c, a) + 1);
 	if (!mot)
 		return (NULL);
+	while (s[i] == c)
+		i++;
 	while (a != '\0')
 	{
 		if (s[i] == c && s[i + 1] != c)
@@ -73,7 +78,7 @@ static char	*cpymot(char const *s, char c, int a)
 		j++;
 		i++;
 	}
-	mot[j] = '\0';
+	mot[j] = 0;
 	return (mot);
 }
 
