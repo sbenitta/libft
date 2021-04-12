@@ -6,7 +6,7 @@
 #    By: sbenitta <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/08 17:01:12 by sbenitta          #+#    #+#              #
-#    Updated: 2021/04/11 14:49:12 by sbenitta         ###   ########.fr        #
+#    Updated: 2021/04/12 16:43:48 by sbenitta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,11 +61,6 @@ LISTE = ft_lstnew.c\
 		ft_lstadd_front.c\
 		ft_lstsize.c\
 		ft_lstlast.c\
-		ft_lstadd_back.c\
-		ft_lstdelone.c\
-		ft_lstclear.c\
-		ft_lstiter.c\
-		ft_lstmap.c\
 
 LST = $(LISTE:.c=.o)
 
